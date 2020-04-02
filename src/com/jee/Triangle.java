@@ -2,29 +2,39 @@ package com.jee;
 
 public class Triangle {
 
-	String type;
-	private int height;
+	 private Point pointA;
+	 private Point pointB;
+	 private Point pointC;
 	
-	public Triangle(String type) {
-		this.type = type;
+	public Point getPointA() {
+		return pointA;
 	}
-	
-	
-	public Triangle(int height) {
-		this.height = height;
-		System.out.println("not called");
+
+	public void setPointA(Point pointA) {
+		this.pointA = pointA;
 	}
-	
-	
-	public Triangle(String type,int height) {
-		this.type = type;
-		this.height =height;
+
+	public Point getPointB() {
+		return pointB;
 	}
-	public String getType() {
-		return type;
+
+	public void setPointB(Point pointB) {
+		this.pointB = pointB;
 	}
-	
+
+	public Point getPointC() {
+		return pointC;
+	}
+
+	public void setPointC(Point pointC) {
+		this.pointC = pointC;
+	}
+
 	public void draw() {
-		System.out.println(type.toString()+" Triangle draw with height "+ height);
+		System.out.println("point A" + pointA.toString());
+		System.out.println("point B" + pointB.toString());
+		System.out.println("point C" + pointC.toString());
+		
+		
 	}
 }

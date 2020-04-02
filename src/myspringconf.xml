@@ -4,15 +4,26 @@
 
 <beans>
 	<bean id="triangleid" class="com.jee.Triangle">
+	  <property name="pointA" ref="zeroPoint"/>
+	   <property name="pointB" ref="point1"/>
+	    <property name="pointC" ref="point2"/>
+	
+	 </bean>
 	 
-	 <constructor-arg value="isosceles "/>
-	 <constructor-arg value="30 "/>
 	 
-	 <!-- other constructor-arg option are:
-	  <constructor-arg index="0" value="isosceles "/>
-	  <constructor-arg index="1" value="30 "/>
+	 <bean id ="zeroPoint" class="com.jee.Point">
+	  	<property name="x" value="0"/>
+	  	<property name="y" value="0"/>
+	 </bean>
 	 
-	  -->
+	  <bean id ="point1" class="com.jee.Point">
+	  	<property name="x" value="-30"/>
+	  	<property name="y" value="0"/>
+	 </bean>
+	 
+	  <bean id ="point2" class="com.jee.Point">
+	  	<property name="x" value="0"/>
+	  	<property name="y" value="30"/>
 	 </bean>
 	
 </beans>
