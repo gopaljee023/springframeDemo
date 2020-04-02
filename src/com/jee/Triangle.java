@@ -2,7 +2,14 @@ package com.jee;
 
 public class Triangle {
 
+	String type;
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 	public void draw() {
-		System.out.println("Triangle draw");
+		System.out.println(type.toString()+" Triangle draw");
 	}
 }

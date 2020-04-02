@@ -3,5 +3,8 @@
 "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
-	<bean id="triangleid" class="com.jee.Triangle"/>
+	<bean id="triangleid" class="com.jee.Triangle">
+	 <property name="type" value="Equilateral"/>
+	 </bean>
+	
 </beans>

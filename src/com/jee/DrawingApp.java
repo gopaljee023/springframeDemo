@@ -1,16 +1,18 @@
 package com.jee;
 
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
-import org.springframework.core.io.FileSystemResource;
+
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 
 public class DrawingApp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		BeanFactory factory = new XmlBeanFactory(new FileSystemResource("myspringconf.xml"));
-		 Triangle t = (Triangle) factory.getBean("triangleid");
+		ApplicationContext context = new ClassPathXmlApplicationContext("myspringconf.xml");
+		 Triangle t = (Triangle) context.getBean("triangleid");
 		 t.draw();
 
 	}
