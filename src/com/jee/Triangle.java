@@ -1,39 +1,30 @@
 package com.jee;
 
+import java.util.Iterator;
+import java.util.List;
+
 public class Triangle {
 
-	 private Point pointA;
-	 private Point pointB;
-	 private Point pointC;
+	 private List<Point> points;
 	
-	public Point getPointA() {
-		return pointA;
+
+	public List<Point> getPoints() {
+		return points;
 	}
 
-	public void setPointA(Point pointA) {
-		this.pointA = pointA;
+
+	public void setPoints(List<Point> points) {
+		this.points = points;
 	}
 
-	public Point getPointB() {
-		return pointB;
-	}
-
-	public void setPointB(Point pointB) {
-		this.pointB = pointB;
-	}
-
-	public Point getPointC() {
-		return pointC;
-	}
-
-	public void setPointC(Point pointC) {
-		this.pointC = pointC;
-	}
 
 	public void draw() {
-		System.out.println("point A" + pointA.toString());
-		System.out.println("point B" + pointB.toString());
-		System.out.println("point C" + pointC.toString());
+		for (Iterator iterator = points.iterator(); iterator.hasNext();) {
+			Point point = (Point) iterator.next();
+			System.out.println("("+point.toString() +")");
+			
+		}
+		
 		
 		
 	}
