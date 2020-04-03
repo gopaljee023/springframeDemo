@@ -2,11 +2,23 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
 "http://www.springframework.org/dtd/spring-beans.dtd">
 
-<beans>
-	<bean id="triangleid" class="com.jee.Triangle" autowire="byName">
-	 
+	<beans>
+         
+<!-- 	<context:property-placeholder location="classpath:Rivers.properties"/> -->
+	
+	<bean id="propertyConfigurer"
+		class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="locations">
+		<value>classpath:Rivers.properties</value>
+		</property>
+</bean>
+
+	<bean id="triangleid" class="com.jee.Triangle">
+		  <property name="pointA" ref="pointA"/>
+		  <property name="pointB" ref="pointB"/>
+		  <property name="pointC" ref="pointC"/>
 	 </bean>
-	 
 	 
 	 <bean id ="pointA" class="com.jee.Point">
 	  	<property name="x" value="0"/>
@@ -22,5 +34,15 @@
 	  	<property name="x" value="0"/>
 	  	<property name="y" value="30"/>
 	 </bean>
+	 
+	  <bean id ="circle" class="com.jee.Circle">
+	         <property name="pointCenter" ref="pointC"></property>
+	  </bean>
+	  
+	  <bean id="river" class="com.jee.Rivers">
+	    <property name="email" value="${Rivers.email}"></property>
+	  </bean>
+	  
+	  <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
 	
 </beans>
